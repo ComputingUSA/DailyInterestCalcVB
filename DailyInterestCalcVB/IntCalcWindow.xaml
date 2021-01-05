@@ -1,12 +1,23 @@
-﻿<Window x:Class="MainWindow"
+﻿<Window x:Class="IntCalcWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DailyInterestCalcVB"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Daily Interest Calculator" Height="300" Width="300">
     <Grid>
-        
+        <TextBlock x:Name="prompt1" Margin="25,0,2,30"  ><InlineUIContainer>
+                <StackPanel Height="245" Width="240" RenderTransformOrigin="0.577,0.5">
+                    <TextBlock x:Name="p1" TextWrapping="Wrap" Text="Principal ($)" Height="21"/>
+                    <TextBox x:Name="pInput" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged"/>
+                    <TextBlock TextWrapping="Wrap" Text="Interest (%)"/>
+                    <TextBox x:Name="iInput" Height="23" TextWrapping="Wrap"/>
+                    <TextBlock TextWrapping="Wrap" Text="Days"/>
+                    <TextBox x:Name="dInput" Height="23" TextWrapping="Wrap" Text="1"/>
+                <Button Content="Calculate" Margin="0,0,115,0" Click="Button_Click"/>
+                <TextBlock x:Name="resultDisplay" TextWrapping="Wrap" Height="101" Margin="0,0,25,0"/>
+                </StackPanel>
+            </InlineUIContainer></TextBlock>
     </Grid>
 </Window>
